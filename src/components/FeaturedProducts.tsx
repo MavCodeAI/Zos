@@ -7,7 +7,7 @@ import { ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const FeaturedProducts = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   return (
     <section className="section-padding bg-background">
@@ -18,7 +18,7 @@ const FeaturedProducts = () => {
               {t('featuredProducts')}
             </h2>
             <p className="text-muted-foreground max-w-2xl">
-              {t('language') === 'en' 
+              {language === 'en' 
                 ? "Discover our handpicked selection of premium South Asian products, each telling a story of tradition, quality, and exceptional craftsmanship."
                 : "جنوبی ایشیائی پریمیم مصنوعات کا ہمارا منتخب کردہ مجموعہ دریافت کریں، ہر ایک روایت، معیار، اور استثنائی کاریگری کی کہانی بیان کرتا ہے۔"
               }
@@ -29,7 +29,7 @@ const FeaturedProducts = () => {
             className="mt-4 md:mt-0 inline-flex items-center text-zahir-burgundy dark:text-zahir-gold hover:underline font-medium"
           >
             {t('viewAllProducts')}
-            <ChevronRight size={18} className="ml-1" />
+            <ChevronRight size={18} className={language === 'ur' ? 'mr-1 rotate-180' : 'ml-1'} />
           </Link>
         </div>
         

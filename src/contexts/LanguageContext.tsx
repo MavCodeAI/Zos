@@ -124,6 +124,62 @@ export const translations: Translations = {
     en: 'Password',
     ur: 'پاس ورڈ'
   },
+  subscribe: {
+    en: 'Subscribe',
+    ur: 'سبسکرائب کریں'
+  },
+  subscribeToNewsletter: {
+    en: 'Subscribe to our newsletter',
+    ur: 'ہماری نیوز لیٹر کے لیے سبسکرائب کریں'
+  },
+  privacy: {
+    en: 'Privacy Policy',
+    ur: 'پرائیویسی پالیسی'
+  },
+  terms: {
+    en: 'Terms & Conditions',
+    ur: 'شرائط و ضوابط'
+  },
+  shipping: {
+    en: 'Shipping Information',
+    ur: 'شپنگ کی معلومات'
+  },
+  contactUs: {
+    en: 'Contact Us',
+    ur: 'ہم سے رابطہ کریں'
+  },
+  writeToUs: {
+    en: 'Write to Us',
+    ur: 'ہمیں لکھیں'
+  },
+  sendMessage: {
+    en: 'Send Message',
+    ur: 'پیغام بھیجیں'
+  },
+  yourName: {
+    en: 'Your Name',
+    ur: 'آپ کا نام'
+  },
+  yourEmail: {
+    en: 'Your Email',
+    ur: 'آپ کا ای میل'
+  },
+  subject: {
+    en: 'Subject',
+    ur: 'موضوع'
+  },
+  message: {
+    en: 'Message',
+    ur: 'پیغام'
+  },
+  aboutUs: {
+    en: 'About Us',
+    ur: 'ہمارے بارے میں'
+  },
+  language: {
+    en: 'en',
+    ur: 'ur'
+  }
 };
 
 type LanguageContextType = {
