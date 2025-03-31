@@ -5,7 +5,7 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Heart, Star } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { useToast } from '@/hooks/use-toast';
+import { useCart } from '@/contexts/CartContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { formatPrice } from '@/data/products';
 
@@ -30,8 +30,8 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { toast } = useToast();
-  const { language, t } = useLanguage();
+  const { addToCart } = useCart();
+  const { t, language } = useLanguage();
   
   const { 
     id, 
@@ -47,17 +47,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   } = product;
 
   const handleAddToCart = () => {
-    toast({
-      title: t('addToCart'),
-      description: `${name} ${language === 'en' ? 'added to cart' : 'کارٹ میں شامل کردیا گیا'}`,
-    });
+    addToCart(product);
   };
 
   const handleAddToWishlist = () => {
-    toast({
-      title: t('wishlist'),
-      description: `${name} ${language === 'en' ? 'added to wishlist' : 'پسندیدہ میں شامل کردیا گیا'}`,
-    });
+    // Wishlist functionality is handled in parent component
   };
 
   return (

@@ -1,13 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, ShoppingCart, Heart, User, Sun, Moon, Menu, X, Globe, Settings } from 'lucide-react';
+import { Search, ShoppingCart, Heart, User, Sun, Moon, Menu, Globe, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useAuth } from '@/contexts/AuthContext';
+import { useCart } from '@/contexts/CartContext';
 import { formatPrice } from '@/data/products';
 
 const Navbar = () => {
@@ -16,6 +18,9 @@ const Navbar = () => {
   const { toast } = useToast();
   const { language, setLanguage, t } = useLanguage();
   const { isAuthenticated, isAdmin } = useAuth();
+  const { getCartCount } = useCart();
+  
+  const cartCount = getCartCount();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,13 +41,6 @@ const Navbar = () => {
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
-  };
-
-  const handleCartClick = () => {
-    toast({
-      title: language === 'en' ? "Cart" : "کارٹ",
-      description: language === 'en' ? "Your cart is empty" : "آپ کا کارٹ خالی ہے",
-    });
   };
 
   const toggleLanguage = () => {
@@ -111,13 +109,20 @@ const Navbar = () => {
             <Heart size={20} />
           </button>
           
-          <button 
-            className="text-foreground hover:text-zahir-burgundy dark:hover:text-zahir-gold transition-all-300"
-            onClick={handleCartClick}
-            aria-label="Cart"
+          <Link 
+            to="/cart"
+            className="relative text-foreground hover:text-zahir-burgundy dark:hover:text-zahir-gold transition-all-300"
           >
             <ShoppingCart size={20} />
-          </button>
+            {cartCount > 0 && (
+              <Badge 
+                className="absolute -top-2 -right-2 h-5 w-5 p-0 flex items-center justify-center bg-zahir-burgundy dark:bg-zahir-gold text-white dark:text-zahir-dark text-xs"
+                variant="outline"
+              >
+                {cartCount}
+              </Badge>
+            )}
+          </Link>
           
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -162,15 +167,15 @@ const Navbar = () => {
                 <Menu size={24} />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetContent side={language === 'ur' ? "left" : "right"} className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col gap-6 mt-12">
                 <div className="flex justify-between items-center mb-6">
                   <Button variant="outline" size="sm" onClick={toggleLanguage}>
-                    <Globe size={16} className="mr-2" />
+                    <Globe size={16} className={language === 'ur' ? "ml-2" : "mr-2"} />
                     {language === 'en' ? 'Switch to Urdu' : 'انگریزی میں تبدیل کریں'}
                   </Button>
                   <Button variant="outline" size="sm" onClick={toggleTheme}>
-                    {isDarkMode ? <Sun size={16} className="mr-2" /> : <Moon size={16} className="mr-2" />}
+                    {isDarkMode ? <Sun size={16} className={language === 'ur' ? "ml-2" : "mr-2"} /> : <Moon size={16} className={language === 'ur' ? "ml-2" : "mr-2"} />}
                     {isDarkMode ? 
                       (language === 'en' ? 'Light Mode' : 'لائٹ موڈ') : 
                       (language === 'en' ? 'Dark Mode' : 'ڈارک موڈ')
@@ -187,6 +192,13 @@ const Navbar = () => {
                     {link.name}
                   </Link>
                 ))}
+                
+                <Link
+                  to="/cart"
+                  className="text-xl font-playfair font-medium hover:text-zahir-burgundy dark:hover:text-zahir-gold transition-all-300"
+                >
+                  {t('cart')} {cartCount > 0 && `(${cartCount})`}
+                </Link>
                 
                 {isAdmin && (
                   <Link

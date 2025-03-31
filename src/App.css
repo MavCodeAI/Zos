@@ -1,42 +1,83 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+/* We're mostly using Tailwind CSS, so we can simplify this file */
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* RTL Support Improvements */
+.rtl {
+  text-align: right;
+  direction: rtl;
 }
 
-@keyframes logo-spin {
+.rtl .ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Enhance buttons in RTL mode */
+.rtl button svg,
+.rtl .btn svg {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+.rtl .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.rtl .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Fix flex direction for RTL */
+.rtl .flex-row {
+  flex-direction: row-reverse;
+}
+
+.rtl .space-x-1>:not([hidden])~:not([hidden]),
+.rtl .space-x-2>:not([hidden])~:not([hidden]),
+.rtl .space-x-3>:not([hidden])~:not([hidden]),
+.rtl .space-x-4>:not([hidden])~:not([hidden]),
+.rtl .space-x-5>:not([hidden])~:not([hidden]),
+.rtl .space-x-6>:not([hidden])~:not([hidden]),
+.rtl .space-x-8>:not([hidden])~:not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* Add some transitions */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.card {
-  padding: 2em;
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
 }
 
-.read-the-docs {
-  color: #888;
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.7);
 }

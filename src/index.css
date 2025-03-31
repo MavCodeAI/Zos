@@ -82,6 +82,32 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-playfair;
   }
+  
+  /* RTL Support */
+  .rtl {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  /* Fix image display in RTL mode */
+  .rtl img {
+    transform: scaleX(1);
+  }
+  
+  /* Force LTR for certain elements */
+  .rtl .ltr {
+    direction: ltr;
+    text-align: left;
+  }
+  
+  /* Fix RTL margins */
+  .rtl .ml-1, .rtl .ml-2, .rtl .ml-3, .rtl .ml-4 {
+    margin-left: 0 !important;
+  }
+  
+  .rtl .mr-1, .rtl .mr-2, .rtl .mr-3, .rtl .mr-4 {
+    margin-right: 0 !important;
+  }
 }
 
 @layer components {
@@ -99,5 +125,51 @@
 
   .transition-all-300 {
     @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Cart badge animation */
+  .cart-badge-pulse {
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(142, 41, 65, 0.7);
+    }
+    
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 6px rgba(142, 41, 65, 0);
+    }
+    
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(142, 41, 65, 0);
+    }
+  }
+  
+  /* Checkout form inputs */
+  .checkout-input {
+    @apply border border-input rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-zahir-burgundy dark:focus:ring-zahir-gold transition-colors;
+  }
+  
+  /* Order confirmation animation */
+  .order-success {
+    animation: successPulse 1s ease-in-out;
+  }
+  
+  @keyframes successPulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    70% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }

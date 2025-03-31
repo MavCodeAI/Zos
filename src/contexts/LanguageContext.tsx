@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type Language = 'en' | 'ur';
@@ -179,6 +178,130 @@ export const translations: Translations = {
   language: {
     en: 'en',
     ur: 'ur'
+  },
+  cart: {
+    en: 'Cart',
+    ur: 'کارٹ'
+  },
+  wishlist: {
+    en: 'Wishlist',
+    ur: 'پسندیدہ'
+  },
+  addToCart: {
+    en: 'Add to Cart',
+    ur: 'کارٹ میں شامل کریں'
+  },
+  outOfStock: {
+    en: 'Out of Stock',
+    ur: 'سٹاک میں نہیں'
+  },
+  emptyCart: {
+    en: 'Your cart is empty',
+    ur: 'آپ کا کارٹ خالی ہے'
+  },
+  continueShopping: {
+    en: 'Continue Shopping',
+    ur: 'شاپنگ جاری رکھیں'
+  },
+  cartSummary: {
+    en: 'Cart Summary',
+    ur: 'کارٹ کا خلاصہ'
+  },
+  productName: {
+    en: 'Product Name',
+    ur: 'پروڈکٹ کا نام'
+  },
+  quantity: {
+    en: 'Quantity',
+    ur: 'مقدار'
+  },
+  price: {
+    en: 'Price',
+    ur: 'قیمت'
+  },
+  removeFromCart: {
+    en: 'Remove',
+    ur: 'ہٹائیں'
+  },
+  subtotal: {
+    en: 'Subtotal',
+    ur: 'ذیلی کل'
+  },
+  shipping: {
+    en: 'Shipping',
+    ur: 'شپنگ'
+  },
+  tax: {
+    en: 'Tax',
+    ur: 'ٹیکس'
+  },
+  total: {
+    en: 'Total',
+    ur: 'کل'
+  },
+  checkout: {
+    en: 'Proceed to Checkout',
+    ur: 'چیک آؤٹ کے لیے آگے بڑھیں'
+  },
+  billingDetails: {
+    en: 'Billing Details',
+    ur: 'بلنگ کی تفصیلات'
+  },
+  fullName: {
+    en: 'Full Name',
+    ur: 'پورا نام'
+  },
+  address: {
+    en: 'Address',
+    ur: 'پتہ'
+  },
+  city: {
+    en: 'City',
+    ur: 'شہر'
+  },
+  postalCode: {
+    en: 'Postal Code',
+    ur: 'پوسٹل کوڈ'
+  },
+  phoneNumber: {
+    en: 'Phone Number',
+    ur: 'فون نمبر'
+  },
+  orderNotes: {
+    en: 'Order Notes',
+    ur: 'آرڈر نوٹس'
+  },
+  placeOrder: {
+    en: 'Place Order',
+    ur: 'آرڈر پلیس کریں'
+  },
+  paymentMethod: {
+    en: 'Payment Method',
+    ur: 'ادائیگی کا طریقہ'
+  },
+  cashOnDelivery: {
+    en: 'Cash on Delivery',
+    ur: 'ڈیلیوری پر نقد ادائیگی'
+  },
+  bankTransfer: {
+    en: 'Bank Transfer',
+    ur: 'بینک ٹرانسفر'
+  },
+  creditCard: {
+    en: 'Credit Card',
+    ur: 'کریڈٹ کارڈ'
+  },
+  orderSuccess: {
+    en: 'Order Placed Successfully',
+    ur: 'آرڈر کامیابی سے پلیس کر دیا گیا'
+  },
+  orderFailure: {
+    en: 'Failed to Place Order',
+    ur: 'آرڈر پلیس کرنے میں ناکامی'
+  },
+  orderConfirmation: {
+    en: 'Order Confirmation',
+    ur: 'آرڈر کی تصدیق'
   }
 };
 
