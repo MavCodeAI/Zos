@@ -32,7 +32,7 @@ const articles = [
   },
   {
     id: 4,
-    title: 'The Science Behind Ashwagandha's Stress-Relieving Properties',
+    title: "The Science Behind Ashwagandha's Stress-Relieving Properties",
     excerpt: 'A deep dive into how this adaptogenic herb helps the body manage stress and restore balance.',
     date: 'March 30, 2023',
     category: 'Research & Science',
@@ -40,8 +40,8 @@ const articles = [
   },
   {
     id: 5,
-    title: 'Sustainable Harvesting: How We Source Our Products',
-    excerpt: 'Learn about ZOS's commitment to ethical sourcing and environmental responsibility.',
+    title: "Sustainable Harvesting: How We Source Our Products",
+    excerpt: "Learn about ZOS's commitment to ethical sourcing and environmental responsibility.",
     date: 'February 15, 2023',
     category: 'Behind the Scenes',
     imageUrl: '/placeholder.svg'
