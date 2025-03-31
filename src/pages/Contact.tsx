@@ -1,10 +1,10 @@
-
 import React from 'react';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   return (
