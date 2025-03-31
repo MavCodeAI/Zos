@@ -1,11 +1,10 @@
-
 import React, { useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
-import { Dashboard, Package, ShoppingCart, Users, Settings, LogOut } from 'lucide-react';
+import { LayoutDashboard, Package, ShoppingCart, Users, Settings, LogOut } from 'lucide-react';
 
 // Admin Panel Components
 import AdminDashboard from '@/components/admin/AdminDashboard';
@@ -62,7 +61,7 @@ const Admin = () => {
                     onClick={() => setActiveTab('dashboard')}
                     className={activeTab === 'dashboard' ? 'bg-zahir-cream dark:bg-zahir-dark/50' : ''}
                   >
-                    <Dashboard size={20} />
+                    <LayoutDashboard size={20} />
                     <span>{t('dashboard')}</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
