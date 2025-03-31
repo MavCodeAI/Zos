@@ -15,7 +15,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div>
             <Link to="/" className="font-playfair text-2xl font-bold text-zahir-cream">
-              Zahir<span className="text-zahir-gold">.</span>
+              ZOS<span className="text-zahir-gold">.</span>
             </Link>
             <p className="mt-4 text-sm text-gray-300 max-w-xs">
               Premium South Asian natural products, bringing ancient wellness traditions to your modern lifestyle.
@@ -69,7 +69,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-zahir-gold flex-shrink-0" />
-                <span className="text-gray-300">hello@zahiropenstore.com</span>
+                <span className="text-gray-300">hello@zos.pk</span>
               </li>
             </ul>
           </div>
@@ -97,7 +97,7 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-gray-800 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center">
-          <p>© {currentYear} Zahir Open Store. All rights reserved.</p>
+          <p>© {currentYear} ZOS. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/terms" className="hover:text-zahir-gold transition-all-300">Terms of Service</Link>
             <Link to="/privacy" className="hover:text-zahir-gold transition-all-300">Privacy Policy</Link>

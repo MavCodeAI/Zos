@@ -61,7 +61,7 @@ const Navbar = () => {
           to="/" 
           className="font-playfair text-2xl font-bold text-zahir-burgundy dark:text-zahir-cream"
         >
-          Zahir<span className="text-zahir-gold">.</span>
+          ZOS<span className="text-zahir-gold">.</span>
         </Link>
 
         {/* Desktop Navigation */}
